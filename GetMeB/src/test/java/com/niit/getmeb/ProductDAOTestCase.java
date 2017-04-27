@@ -1,0 +1,70 @@
+package com.niit.getmeb;
+
+import static org.junit.Assert.*;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.niit.getmeb.dao.ProductDAO;
+import com.niit.getmeb.domain.Product;
+
+public class ProductDAOTestCase {
+
+	@Autowired static AnnotationConfigApplicationContext context;
+	
+	@Autowired static ProductDAO productDAO;
+	
+	@Autowired static Product product;
+	
+	//initialize above objects
+	
+	@BeforeClass
+	public static void initialize(){
+		context=new AnnotationConfigApplicationContext();
+		context.scan("com.niit");
+		context.refresh();
+		
+		//get productdao from context
+		
+		productDAO=(ProductDAO) context.getBean("productDAO");
+		
+		//get product from context
+		
+		product=(Product) context.getBean("product");
+	}
+	
+	//TestCases
+	@Test
+	public void createProductTestCase(){
+		product.setId("S221");
+		product.setName("mobile");
+		product.setDescription("mobile of brand xxx");
+		product.setPrice(20000);
+		boolean flag=productDAO.save(product);
+		assertEquals("ceate producttestcase",true,flag);
+	}
+	
+	 @Test
+     public void updateProductTestCase(){
+		product.setId("S221");
+		product.setName("NOKIA");
+		product.setDescription("FOREIGN BASED MOBILE COMPANY");
+		
+		boolean flag=productDAO.update(product);
+		assertEquals("updateProductTestCase",true,flag);
+		}
+	
+
+	
+	@Test
+	public void getAllProductTestCase(){
+		int actualSize=productDAO.list().size();
+		assertEquals(1,actualSize);
+	}
+
+
+}
+
+
