@@ -25,18 +25,13 @@
       <li class="active"><a href="#">Home</a></li>
     <c:forEach var="category" items="${categoryList}">
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">${category.name}<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Page 1-4</a></li>
-          <li><a href="#">Page 1-2</a></li>
-          <li><a href="#">Page 1-3</a></li>
+        <c:forEach var="product" items="${productList}">
+        <ul class="dropdown-menu" a clas="dropdown-toggle" data-toggle="dropdown" href="#">${product.name}</a>
+         
         </ul>
       </li>
-       
+       </c:forEach>
       </c:forEach>
-      
-     
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
     </ul>
   </div>
 </nav>

@@ -38,10 +38,11 @@ public class UserDAOTestCase {
 	
 	@Test
 	public void createUserTestCase(){
-		user.setId("10911");
+		user.setId("101");
 		user.setName("aaa");
 		user.setPassword("ssdj");
 		user.setContact(9924569);
+		user.setRole("ROLE_ADMIN");
 		boolean flag=userDAO.save(user);
 		assertEquals("createUserTestCase",true,flag);
 		

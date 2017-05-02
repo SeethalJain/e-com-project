@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.getmeb.dao.CategoryDAO;
+import com.niit.getmeb.dao.ProductDAO;
 import com.niit.getmeb.domain.Category;
+import com.niit.getmeb.domain.Product;
 
 @Controller
 
@@ -21,6 +23,9 @@ public class HomeController {
 	@Autowired HttpSession session;
 	@Autowired Category category;
 	@Autowired CategoryDAO categoryDAO;
+	@Autowired Product product;
+	@Autowired ProductDAO productDAO;
+	
 	@RequestMapping("/")	
 	
 	public ModelAndView goToHome(){
@@ -33,6 +38,13 @@ public class HomeController {
 		//attAch to session
 		session.setAttribute("categoryList",categoryList);
 		session.setAttribute("category", category);
+		
+		//get all product
+				List <Product> productList=productDAO.list();
+				
+				//attAch to session
+				session.setAttribute("productList",productList);
+				session.setAttribute("product", product);
 		
 		return mv;
 	}

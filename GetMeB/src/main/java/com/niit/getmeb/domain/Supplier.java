@@ -1,8 +1,12 @@
 package com.niit.getmeb.domain;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -18,7 +22,22 @@ public class Supplier {
 	private String supplier_name;
 	@Column(name="supplier_desc")
 	private String supplier_desc;
+
+	private Set<Product> products;
 	
+	/*public Supplier()
+
+	{
+		
+	}
+	@OneToMany(mappedBy="supplier",fetch = FetchType.EAGER)
+	public Set<Product> getProducts() {
+		return products;
+	}
+	public void setProducts(Set<Product> products) {
+		this.products = products;
+	}
+*/
 	
 	public String getSupplier_id() {
 		return supplier_id;

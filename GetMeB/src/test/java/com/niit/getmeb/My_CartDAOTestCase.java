@@ -8,9 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.niit.getmeb.dao.My_CartDAO;
-import com.niit.getmeb.dao.UserDAO;
 import com.niit.getmeb.domain.My_Cart;
-import com.niit.getmeb.domain.User;
 
 public class My_CartDAOTestCase {
 
@@ -29,10 +27,10 @@ public class My_CartDAOTestCase {
 		context.scan("com.niit");
 		context.refresh();
 		
-		//get userdao from context
+		//get my_cartdao from context
 		my_CartDAO=(My_CartDAO) context.getBean("my_CartDAO");
 		
-		//get user from context
+		//get my_cart from context
 		my_Cart=(My_Cart) context.getBean("my_Cart");
 		}
 	

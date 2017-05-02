@@ -16,18 +16,27 @@ public class UserController {
 	
 	@Autowired User user;
 	
-	//get userid and pwd from login page & send it to userDao validate
+	//get user id and pwd from login page & send it to userDao validate
 	@RequestMapping("validate")
 	public ModelAndView login(@RequestParam("username")String id, @RequestParam("password")String password){
 		ModelAndView mv=new ModelAndView("/Home");
 		if(userDAO.validate(id,password)==true){
 			user=userDAO.get(id);
 			mv.addObject("msg","welcome" +user.getName());
+			mv.addObject("categoryList",categoryDAO.list());
 		}
 		else{
 			mv.addObject("msg","InvalidCredentials...please try again...");
 		}
-		return mv;
+	
+		//to check whether user is admin or not
+		if(user.getRole().equals("Role_Admin")){
+			mv.addObject("isAdmin","true");
+		}
+		else{
+			mv.addObject("isAdmin","false");
+		}
+				return mv;
 	}
 	
 }

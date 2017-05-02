@@ -28,7 +28,16 @@ public class User {
 	@Column(name="password")
 	private String password;
 	@Column(name="contact")
-	private int contact;
+    private int contact;
+	@Column(name="role")
+	private String role;
+	
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
 	public String getId() {
 		return id;
 	}
@@ -53,5 +62,5 @@ public class User {
 	public void setContact(int contact) {
 		this.contact = contact;
 	}
-	
+
 }

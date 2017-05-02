@@ -38,20 +38,23 @@ public class ProductDAOTestCase {
 	//TestCases
 	@Test
 	public void createProductTestCase(){
-		product.setId("S221");
+		product.setId("S222");
 		product.setName("mobile");
 		product.setDescription("mobile of brand xxx");
 		product.setPrice(20000);
+		product.setSupplier("s1122");
+		product.setCategory("1001");
 		boolean flag=productDAO.save(product);
 		assertEquals("ceate producttestcase",true,flag);
 	}
 	
 	 @Test
      public void updateProductTestCase(){
-		product.setId("S221");
+		product.setId("S2211");
 		product.setName("NOKIA");
 		product.setDescription("FOREIGN BASED MOBILE COMPANY");
-		
+		product.setPrice(20000);
+		product.setSupplier("s1122");
 		boolean flag=productDAO.update(product);
 		assertEquals("updateProductTestCase",true,flag);
 		}

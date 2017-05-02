@@ -18,6 +18,23 @@ ${msg}
 
 <jsp:include page="Menu.jsp"></jsp:include>
 
+<c:if test = "${isAdmin=='true'}">
+	<jsp:include page="Admin/AdminHome.jsp"></jsp:include>
+</c:if>
+
+<c:if test="${isAdminClickedCategory=='true'}">
+<jsp:include page="Admin/Category.jsp"></jsp:include>
+</c:if>	
+
+<c:if test="${isAdminClickedSupplier=='true'}">
+<jsp:include page="Admin/Supplier.jsp"></jsp:include>
+</c:if>
+
+<c:if test="${isAdminClickedProduct=='true'}">
+<jsp:include page="Admin/Product.jsp"></jsp:include>
+</c:if>
+
+
 <c:if test="${isValidLogin == 'true'}">
 <jsp:include page= "Login.jsp"></jsp:include>
 </c:if>

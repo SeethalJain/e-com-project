@@ -8,8 +8,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.springframework.stereotype.Component;
+
 @Entity
 @Table(name="My_Cart")
+@Component
 public class My_Cart {
 	@Id
 	@Column(name="id")
