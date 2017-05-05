@@ -1,7 +1,5 @@
 package com.niit.getmeb.domain;
 
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;

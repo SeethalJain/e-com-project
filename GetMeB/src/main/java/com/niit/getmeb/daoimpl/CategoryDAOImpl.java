@@ -6,16 +6,17 @@ import javax.transaction.Transactional;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.niit.getmeb.dao.CategoryDAO;
 import com.niit.getmeb.domain.Category;
-
+@Component
 @Repository("categoryDAO")											//to create a singleton instance 
 @Transactional														//to create connection
 public class CategoryDAOImpl implements CategoryDAO {
 	
-	@Autowired
+	@Autowired(required=true)
 	private SessionFactory sessionFactory;
 	
 	//user defined constructor with one argument

@@ -20,14 +20,13 @@ import com.niit.getmeb.domain.Product;
 
 public class HomeController {
 	
-	@Autowired HttpSession session;
-	@Autowired Category category;
-	@Autowired CategoryDAO categoryDAO;
-	@Autowired Product product;
-	@Autowired ProductDAO productDAO;
+	@Autowired(required=true) HttpSession session;
+	@Autowired(required=true) Category category;
+	@Autowired(required=true) CategoryDAO categoryDAO;
+	@Autowired(required=true) Product product;
+	@Autowired(required=true) ProductDAO productDAO;
 	
 	@RequestMapping("/")	
-	
 	public ModelAndView goToHome(){
 		ModelAndView mv = new ModelAndView("Home");
 		mv.addObject("welcome", "thank you");
@@ -36,14 +35,15 @@ public class HomeController {
 		List <Category> categoryList=categoryDAO.list();
 		
 		//attAch to session
-		session.setAttribute("categoryList",categoryList);
+		session.setAttribute("categoryList",categoryDAO.list());
 		session.setAttribute("category", category);
+
 		
 		//get all product
 				List <Product> productList=productDAO.list();
 				
 				//attAch to session
-				session.setAttribute("productList",productList);
+				session.setAttribute("productList",productDAO.list());
 				session.setAttribute("product", product);
 		
 		return mv;

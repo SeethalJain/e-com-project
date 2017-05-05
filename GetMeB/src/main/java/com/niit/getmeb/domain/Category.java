@@ -22,20 +22,17 @@ public class Category {
 	private String name;
 	@Column(name="cat_type")
 	private String cat_type;
-   /* private Set<Product> products;
+   
+     @OneToMany(mappedBy="category",fetch = FetchType.EAGER)
+      private Set<Product> products;
     
-    public Category()
-    {
-    	
-    }
-	@OneToMany(mappedBy="category",fetch = FetchType.EAGER)
+	
 	public Set<Product> getProducts() {
 		return products;
 	}
 	public void setProducts(Set<Product> products) {
 		this.products = products;
 	}
-*/	
 
 	public String getId() {
 		return id;

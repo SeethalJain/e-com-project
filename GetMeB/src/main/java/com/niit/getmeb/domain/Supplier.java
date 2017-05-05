@@ -22,22 +22,17 @@ public class Supplier {
 	private String supplier_name;
 	@Column(name="supplier_desc")
 	private String supplier_desc;
-
+	
+	@OneToMany(mappedBy="supplier",fetch = FetchType.EAGER)
 	private Set<Product> products;
 	
-	/*public Supplier()
-
-	{
-		
-	}
-	@OneToMany(mappedBy="supplier",fetch = FetchType.EAGER)
-	public Set<Product> getProducts() {
+		public Set<Product> getProducts() {
 		return products;
 	}
 	public void setProducts(Set<Product> products) {
 		this.products = products;
 	}
-*/
+
 	
 	public String getSupplier_id() {
 		return supplier_id;
@@ -57,7 +52,5 @@ public class Supplier {
 	public void setSupplier_desc(String supplier_desc) {
 		this.supplier_desc = supplier_desc;
 	}
-
-	
 	
 }

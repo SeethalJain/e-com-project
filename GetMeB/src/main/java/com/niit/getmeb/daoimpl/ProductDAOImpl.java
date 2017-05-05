@@ -17,7 +17,7 @@ import com.niit.getmeb.domain.Product;
 
 public class ProductDAOImpl implements ProductDAO {
 	
-	@Autowired
+	@Autowired(required=true)
 	private SessionFactory sessionFactory;
 	
 	//user defined constructor with one argument
@@ -55,7 +55,6 @@ public class ProductDAOImpl implements ProductDAO {
 	
 	
 	@SuppressWarnings("unchecked")
-	
 	public List<Product> list() {
 		return sessionFactory.getCurrentSession().createQuery("from Product").list();
 	}

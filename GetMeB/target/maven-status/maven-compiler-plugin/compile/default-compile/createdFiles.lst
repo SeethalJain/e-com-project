@@ -1,0 +1,16 @@
+com\niit\getmeb\config\ApplicationConfig.class
+com\niit\getmeb\dao\ProductDAO.class
+com\niit\getmeb\dao\SupplierDAO.class
+com\niit\getmeb\daoimpl\ProductDAOImpl.class
+com\niit\getmeb\daoimpl\My_CartDAOIpml.class
+com\niit\getmeb\domain\User.class
+com\niit\getmeb\daoimpl\SupplierDAOImpl.class
+com\niit\getmeb\domain\Supplier.class
+com\niit\getmeb\domain\My_Cart.class
+com\niit\getmeb\dao\UserDAO.class
+com\niit\getmeb\dao\CategoryDAO.class
+com\niit\getmeb\dao\My_CartDAO.class
+com\niit\getmeb\daoimpl\UserDAOImpl.class
+com\niit\getmeb\daoimpl\CategoryDAOImpl.class
+com\niit\getmeb\domain\Product.class
+com\niit\getmeb\domain\Category.class

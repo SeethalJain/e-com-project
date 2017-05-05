@@ -9,10 +9,10 @@
 </head>
 <body>
 
-${msg}
+
 <center><h1>GetMe</h1>
 <h3>Grab ME...AM Yours..:):)</h3></center>
-
+${msg}
 <div-class="row">
    <div-class="col-md-4">
 

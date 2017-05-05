@@ -53,7 +53,7 @@ import org.springframework.context.annotation.Bean;
 	return properties;
 	}
 
-	@Autowired
+	@Autowired(required=true)
 	@Bean(name="sessionFactory")
 	public SessionFactory getSessionFactory(DataSource dataSource) 
 	{
@@ -69,7 +69,7 @@ import org.springframework.context.annotation.Bean;
 	return sessionBuilder.buildSessionFactory();
 	}
 
-	@Autowired
+	@Autowired(required=true)
 	@Bean(name= "transactionManager")
 	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) 
 	{

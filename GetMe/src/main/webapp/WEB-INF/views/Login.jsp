@@ -16,8 +16,8 @@
 </head>
 
 <body>
-
-<form action = "validate" method = "post"><center>
+<center>
+<form action = "validate" method = "post">
 <span class="glyphicon glyphicon-envelo1pe" aria-hidden="true"></span><input type = "text" name = "username"><br>
 <span class="glyphicon glyphicon-lock" aria-hidden="true"></span><input type = "password" name  = "password"><br>
 

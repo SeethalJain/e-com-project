@@ -27,10 +27,8 @@ public class Product {
 	@Column(name="supplier_id")
 	private String supplier_id;
 	
-	/*public Product()
-	{
-		
-	}
+	
+
 	@ManyToOne
 	@JoinColumn(name="category_id", updatable = false, insertable = false, nullable = false)
 	private Category category;
@@ -38,6 +36,8 @@ public class Product {
 	@ManyToOne
 	@JoinColumn(name="supplier_id", updatable = false, insertable = false, nullable = false)
 	private Supplier supplier;
+	
+	/*
 			//@Manytoone (fetch = FetchType.EAGER,cascade=CAscadeType.ALL)   cascadetype.ALL is used instead of updatable insertable n nullable
 	
 	//@Transient				to access image directly from local machine n not from DB then @Transient is used

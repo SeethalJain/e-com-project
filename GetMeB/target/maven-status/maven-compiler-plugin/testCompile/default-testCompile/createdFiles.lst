@@ -1,0 +1,5 @@
+com\niit\getmeb\My_CartDAOTestCase.class
+com\niit\getmeb\CategoryDAOTestCase.class
+com\niit\getmeb\ProductDAOTestCase.class
+com\niit\getmeb\SupplierDAOTestCase.class
+com\niit\getmeb\UserDAOTestCase.class

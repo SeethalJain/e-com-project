@@ -6,11 +6,12 @@ import javax.transaction.Transactional;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.niit.getmeb.dao.SupplierDAO;
 import com.niit.getmeb.domain.Supplier;
-
+@Component
 @Repository("supplierDAO")
 @Transactional
 public class SupplierDAOImpl implements SupplierDAO{

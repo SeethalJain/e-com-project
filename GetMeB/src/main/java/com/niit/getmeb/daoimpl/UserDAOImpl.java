@@ -4,18 +4,22 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.apache.commons.logging.LogFactory;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.niit.getmeb.dao.UserDAO;
 import com.niit.getmeb.domain.User;
-
+@Component
 @Repository("userDAO")
 @Transactional
 public class UserDAOImpl implements UserDAO {
-
+	private static Logger log = LoggerFactory.getLogger(UserDAOImpl.class);
 	@Autowired(required=true)
 	private SessionFactory sessionFactory;
 	
@@ -56,8 +60,8 @@ public class UserDAOImpl implements UserDAO {
 		//validate mtd will return true if all credentials are true else false.
 	
 	public boolean validate(String id, String password) {
-	
-		Query query=sessionFactory.getCurrentSession().createQuery("from User where id=? and password=?");
+	log.debug("Starting of validate method");
+		Query query=sessionFactory.getCurrentSession().createQuery("from User where name=? and password=?");
 									//id=? &pwd=? -->?is used to get from UI
 		query.setString(0,id);
 		query.setString(1, password);

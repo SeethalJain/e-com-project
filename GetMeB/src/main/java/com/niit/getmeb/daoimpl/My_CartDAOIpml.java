@@ -6,11 +6,12 @@ import javax.transaction.Transactional;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.niit.getmeb.dao.My_CartDAO;
 import com.niit.getmeb.domain.My_Cart;
-
+@Component
 @Repository("my_CartDAO")
 @Transactional
 public class My_CartDAOIpml implements My_CartDAO{
